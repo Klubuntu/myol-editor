@@ -7,6 +7,54 @@ var SelectedText;
 //On Yesterdays Progress
 // Work Functions from Toolbox (bold, italic, underline: etc:)
 
+function changeTag(elem, newTag) {
+    newEl = document.createElement(newTag);
+    newEl.innerHTML = elem.innerHTML;
+    elem.parentNode.replaceChild(newEl, elem);
+}
+
+function switchTag(tag){
+
+// https://codepen.io/saigowthamr/pen/OZmWqW
+// https://developer.mozilla.org/en-US/docs/Web/API/Document/execCommand
+// https://levelup.gitconnected.com/using-design-mode-and-execcommand-to-fiddle-with-web-pages-6f4039f7f406
+
+    // Headers
+
+    if (tag == "h1"){
+        document.execCommand('formatBlock', false, '<' + tag + '>');
+    }
+    else if (tag == "h2"){
+        document.execCommand('formatBlock', false, '<' + tag + '>');
+    }
+    else if (tag == "h3"){
+        document.execCommand('formatBlock', false, '<' + tag + '>');
+    }
+    else if (tag == "h4"){
+        document.execCommand('formatBlock', false, '<' + tag + '>');
+    }
+    else if (tag == "h5"){
+        document.execCommand('formatBlock', false, '<' + tag + '>');
+    }
+    else if (tag == "h6"){
+        document.execCommand('formatBlock', false, '<' + tag + '>');
+    }
+
+    // Format Text
+
+    if (tag == "b"){
+        document.execCommand('bold', false, '');
+    }    
+    else if (tag == "u"){
+        document.execCommand('underline', false, '');
+    }    
+    else if (tag == "i"){
+        document.execCommand('italic', false, '');
+    }
+
+
+}
+
 
 function replaceSelectedText(replacementText) {
     var sel, range;
@@ -33,8 +81,8 @@ function BoldTextEditor(elm){
 
 
 function buildMyOLEditor(elm, options) {
-    $style = "<style type='text/css'>textarea::-webkit-scrollbar { width: 0 !important }\
-    textarea{width: 328px;height: 278px;background: transparent;border: 0;outline: none;}\
+    $style = "<style type='text/css'>@import url('css/external/myol-text.css'); .textarea::-webkit-scrollbar { width: 0 !important }\
+    .textarea{width: 328px;height: 278px;background: transparent;border: 0;outline: none;}\
     .editor{width: 330px;height: 330px;background: antiquewhite;border-radius: 8px;}\
     .toolbox img{width: 11.5%;;display:inline-flex;}\
     .toolbox img:hover{background: #c1bcbcc4;border-radius: 4px;}\
@@ -49,7 +97,7 @@ function buildMyOLEditor(elm, options) {
     <img src="js/img/h3.svg" class="h3" alt="h3"/>\
     <img src="js/img/h4.svg" class="h4" alt="h4"/>\
     <img src="js/img/h5.svg" class="h5" alt="h5"/>\
-    </div><textarea></textarea></span></div>';
+    </div><p class="textarea" contenteditable="true"></p></span></div>';
     document.querySelector(elm).innerHTML = $style + $editorCode;
 }
 
