@@ -64,7 +64,7 @@ function buildMyOLEditor(elm, options) {
     <img src="js/img/h3.svg" class="h3" alt="h3"/>\
     <img src="js/img/h4.svg" class="h4" alt="h4"/>\
     <img src="js/img/h5.svg" class="h5" alt="h5"/>\
-    </div><p class="textarea" contenteditable="true"></p></span></div><script type="text/javascript">buildButtons()</script>';
+    </div><p class="textarea" contenteditable="true"></p></span></div>';
     document.querySelector(elm).innerHTML = $style + $editorCode;
     buildButtons();
 }
