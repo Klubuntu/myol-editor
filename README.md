@@ -13,4 +13,4 @@ for vanila JS
 *Example:* ``buildMyOLEditor("#ed1");``
 from [example-editor.html](example-editor.html)
 
-### See: http://myonelist.klbu.eu
+### Check more on: ~~http://myonelist.klbu.eu~~ (https://github.com/Klubuntu/one-my-list)
