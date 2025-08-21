@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
+body{
+   background-color: #111;
+}
+
+.title-page{
+    color: white;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
 
 p, h1, h2, h3, h4, h5, h6{
     font-family: 'Inter', sans-serif;
